@@ -340,8 +340,7 @@ model Cylinder
   SparkPlug spark_plug;
   $\ldots$
 equation
-  connect(spark_plug.spark_advance,
-  cylinder_bus.spark_advance);
+  connect(spark_plug.spark_advance, cylinder_bus.spark_advance);
 end Cylinder;
 
 model I4
@@ -357,8 +356,7 @@ equation
   connect(temp_sensor.T, engine_bus.engine_temp);
   // adds cylinder_bus1 (a nested bus)
   for i in 1:nCylinder loop
-    connect(cylinder[i].cylinder_bus,
-    engine_bus.cylinder_bus[i]);
+    connect(cylinder[i].cylinder_bus, engine_bus.cylinder_bus[i]);
   end for;
 end I4;
 \end{lstlisting}
